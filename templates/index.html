@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+	<div class="container">
+  	<h1>MBA Admission Prediction</h1>
+    <p>Input your data to the following form and find out your probability of getting admitted to MBA program at UCLA.
+      <br> The probability score will range from 0-1 (0 representing 0% chance of getting admitted, and 1 for 100% chance of getting admitted.)</p>
+    
+      <form action="/predict" method="POST">
+        <div class="mb-3">
+          <label for="inputgre" class="form-label">GRE Scores</label>
+          <input type="text" class="form-control" id="inputgre" aria-describedby="greHelp" name="gre">
+          <div id="greHelp" class="form-text">Score out of 340.</div>
+        </div>
+        <div class="mb-3">
+          <label for="inputtoefl" class="form-label">TOEFL Scores</label>
+          <input type="text" class="form-control" id="inputtoefl" aria-describedby="toeflHelp" name="toefl">
+          <div id="toeflHelp" class="form-text">Score out of 120 (iBT).</div>
+        </div>
+        <div class="mb-3">
+          <label for="inputunirating" class="form-label">University Rating</label>
+          <input type="text" class="form-control" id="inputunirating" aria-describedby="uniratingHelp" name="unirating">
+          <div id="uniratingHelp" class="form-text">Score 1 (lowest) to 5 (highest).</div>
+        </div>
+        <div class="mb-3">
+          <label for="inputsop" class="form-label">Statement of Purpose Strength</label>
+          <input type="text" class="form-control" id="inputsop" aria-describedby="sopHelp" name="sop">
+          <div id="sopHelp" class="form-text">Score 1 (lowest) to 5 (highest).</div>
+        </div>
+        <div class="mb-3">
+          <label for="inputlor" class="form-label">Letter of Recommendation Strength</label>
+          <input type="text" class="form-control" id="inputlor" aria-describedby="lorHelp" name="lor">
+          <div id="lorHelp" class="form-text">Score 1 (lowest) to 5 (highest).</div>
+        </div>
+        <div class="mb-3">
+          <label for="inputcgpa" class="form-label">Undergraduate GPA</label>
+          <input type="text" class="form-control" id="inputcgpa" aria-describedby="cgpaHelp" name="cgpa">
+          <div id="cgpaHelp" class="form-text">Range 1-10.</div>
+        </div>
+        <div>
+          <label for="research">Have you ever done research?:</label>
+          <select id="inputresearch" class="form-select" aria-label="Default select example" name="research">
+            <option selected>Choose one of the two options...</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        
+        <br>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+      <br>
+      <br>
+      <br>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+    </div>
+  </body>
+
+  {% endblock %}
